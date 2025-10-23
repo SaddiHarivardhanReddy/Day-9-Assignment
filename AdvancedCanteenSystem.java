@@ -6,8 +6,8 @@ public class AdvancedCanteenSystem {
         Scanner sc = new Scanner(System.in);
 
         int totalTea = 0, totalcoffee = 0, totalSamosa = 0;
-        int teaPrice = 10, coffeePrice = 15, samosaPrice = 20;
-        double taxRate = 0.05;
+        final int teaPrice = 10, coffeePrice = 15, samosaPrice = 20;
+        final double taxRate = 0.05;
 
         int choice;
 
@@ -23,9 +23,9 @@ public class AdvancedCanteenSystem {
             switch (choice) {
                 case 1:
                     System.out.println("--- MENU ---");
-                    System.out.println("1. Tea     - ₹" + teaPrice);
-                    System.out.println("2. Coffee  - ₹" + coffeePrice);
-                    System.out.println("3. Samosa  - ₹" + samosaPrice);
+                    System.out.println("1. Tea     - " + teaPrice);
+                    System.out.println("2. Coffee  - " + coffeePrice);
+                    System.out.println("3. Samosa  - " + samosaPrice);
                     break;
 
                 case 2:
@@ -66,15 +66,15 @@ public class AdvancedCanteenSystem {
                     double subtotal = 0;
 
                     if (totalTea > 0) {
-                        System.out.println("Tea x" + totalTea + " = ₹" + (totalTea * teaPrice));
+                        System.out.println("Tea x" + totalTea + " = " + (totalTea * teaPrice));
                         subtotal += totalTea * teaPrice;
                     }
                     if (totalcoffee > 0) {
-                        System.out.println("Coffee x" + totalcoffee + " = ₹" + (totalcoffee * coffeePrice));
+                        System.out.println("Coffee x" + totalcoffee + " = " + (totalcoffee * coffeePrice));
                         subtotal += totalcoffee * coffeePrice;
                     }
                     if (totalSamosa > 0) {
-                        System.out.println("Samosa x" + totalSamosa + " = ₹" + (totalSamosa * samosaPrice));
+                        System.out.println("Samosa x" + totalSamosa + " = " + (totalSamosa * samosaPrice));
                         subtotal += totalSamosa * samosaPrice;
                     }
 
@@ -86,9 +86,9 @@ public class AdvancedCanteenSystem {
                     double tax = subtotal * taxRate;
                     double total = subtotal + tax;
 
-                    System.out.println("Subtotal = ₹" + subtotal);
-                    System.out.println("Tax (5%) = ₹" + tax);
-                    System.out.println("Total = ₹" + total);
+                    System.out.println("Subtotal = " + subtotal);
+                    System.out.println("Tax (5%) = " + tax);
+                    System.out.println("Total = " + total);
                     break;
 
                 case 4:
@@ -96,10 +96,12 @@ public class AdvancedCanteenSystem {
                     break;
 
                 default:
-                    System.out.println("Invalid choice");
+                    System.out.println("Invalid choice! Please select from 1 to 4.");
             }
         } while (choice != 4);
 
         sc.close();
     }
 }
+
+
